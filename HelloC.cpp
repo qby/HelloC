@@ -51,56 +51,26 @@ T Stack<T>::top() const
     return elems.back();
 }
 
-// int main()
-// {
-//     try
-//     {
-//         Stack<int> intStack;       // int 类型的栈
-//         Stack<string> stringStack; // string 类型的栈
-
-//         // 操作 int 类型的栈
-//         intStack.push(7);
-//         cout << intStack.top() << endl;
-
-//         // 操作 string 类型的栈
-//         stringStack.push("hello");
-//         cout << stringStack.top() << std::endl;
-//         stringStack.pop();
-//         stringStack.pop();
-//     }
-//     catch (exception const &ex)
-//     {
-//         cerr << "Exception: " << ex.what() << endl;
-//         return -1;
-//     }
-// }
-int strcmpa(const char *a, const char *b)
+int main()
 {
-    int a_length = 0;
-    int b_length = 0;
+    try
+    {
+        Stack<int> intStack;       // int 类型的栈
+        Stack<string> stringStack; // string 类型的栈
 
-    while (*a != '\0')
-    {
-        a_length++;
-        a++;
-    }
+        // 操作 int 类型的栈
+        intStack.push(7);
+        cout << intStack.top() << endl;
 
-    while (*b != '\0')
-    {
-        b_length++;
-        b++;
+        // 操作 string 类型的栈
+        stringStack.push("hello");
+        cout << stringStack.top() << std::endl;
+        stringStack.pop();
+        stringStack.pop();
     }
-
-    if (a_length > b_length)
+    catch (exception const &ex)
     {
-        return 1;
-    }
-    else if (a_length < b_length)
-    {
+        cerr << "Exception: " << ex.what() << endl;
         return -1;
-    }
-    else
-    {
-        return 0;
     }
 }
